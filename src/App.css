@@ -1,41 +1,65 @@
 
 .game {
   display: flex;
-  width: 100vw;
-  height: 100vw;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .section-top {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-cntnr {
+  padding: 1rem;
+}
+
+.score {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .cookie-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20rem;
+  width: 20rem;
+}
+
+.big-cookie-btn {
   position: relative;
-  width: 50%;
+  align-items: center;
+  justify-content: center;
+  height: 18rem;
+  width: 18rem;
+  padding: 2rem;
+  border-color: transparent;
+  border-width: 2rem;
+  border-style: solid;
+  border-radius: 50%;
 }
 
 .big-cookie-img {
   position: relative;
-  bottom: 11%; right: 13%;
-  width: 17rem;
-  height: auto;
-}
-
-.big-cookie-btn {
-  position: absolute;
-  height: 18rem;
+  bottom: 3.75rem;
+  right: 3.75rem;
   width: 18rem;
-  background-color: rgba(243, 0, 0, 0.8);
-  border-width: 2rem;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
+  height: auto;
 }
 
 .section-bottom {
   display: flex;
+  justify-content: center;
 }
 
+.upgrade-cntnr {
+  display: flex;
+  flex-direction: column;
+}
+
+.upgrade {
+  height: 4rem;
+  width: 30rem;
+}

@@ -7,9 +7,12 @@
 
 .section-top {
   display: flex;
+  height: 20vw;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 3%;
+  padding-bottom: 5%;
 }
 
 .score-cntnr {
@@ -52,6 +55,8 @@
 .section-bottom {
   display: flex;
   justify-content: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .upgrade-cntnr {

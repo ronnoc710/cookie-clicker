@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Upgrades from "./Components/Upgrade-cntnr"
 import bigCookie from "./Images/cookie.png";
 import "./App.css"
 
 export default function App() {
-  const [cookies, setCookies] = useState(0)
+  const [cookies, setCookies] = useState(() => {
+    const saved = localStorage.getItem("cookies");
+    const initialValue = JSON.parse(saved);
+    return initialValue || 0;
+  });
   
+  useEffect(() => {
+    localStorage.setItem("cookies", cookies);
+  }, [cookies]);
+
   const handleClick = () => {
     setCookies(cookies + 1)
   }
@@ -13,7 +22,7 @@ export default function App() {
     <div className="game">
       <div className="section-top">
         <div className="score-cntnr">
-          <span className="score">{cookies}</span>
+          <span className="score">{cookies} {cookies === 1 ? "cookie": "cookies"}</span>
         </div>
         <div className="cookie-container">
           <button className="big-cookie-btn" onClick={handleClick}>
@@ -22,11 +31,7 @@ export default function App() {
         </div>
       </div>
       <div className="section-bottom">
-        <div className="upgrade-cntnr">
-          <button className="upgrade">pointer</button>
-          <button className="upgrade">grandma</button>
-          <button className="upgrade">factory</button>
-        </div>
+        <Upgrades/>
       </div>
     </div>
   );

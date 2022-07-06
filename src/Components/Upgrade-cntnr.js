@@ -1,12 +1,21 @@
 import React from "react";
+import Upgrade from "./Upgrade"
 
-export default function Upgrades() {
+export default function Upgrades(props) {
+  const upgrades = props.upgradeList
+
+  const shop = upgrades
+  .map(upgrade => (
+    <Upgrade
+      id={upgrade.id}
+      baseCost={ upgrade.baseCost }
+      baseCPS={upgrade.baseCPS}
+    />
+  ));
 
   return(
     <div className="upgrade-cntnr">
-      <button className="upgrade">pointer</button>
-      <button className="upgrade">grandma</button>
-      <button className="upgrade">factory</button>
+      {shop}
     </div>
   )
 }

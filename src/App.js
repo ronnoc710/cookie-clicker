@@ -3,6 +3,17 @@ import Upgrades from "./Components/Upgrade-cntnr"
 import bigCookie from "./Images/cookie.png";
 import "./App.css"
 
+const SHOP = [
+  { id: "Cursor", baseCost: 15, baseCPS: 0.1},
+  { id: "Grandma", baseCost: 100, baseCPS: 1},
+  { id: "Farm", baseCost: 1100, baseCPS: 8},
+  { id: "Mine", baseCost: 12000, baseCPS: 47}, 
+  { id: "Factory", baseCost: 130000, baseCPS: 260},
+  { id: "Bank", baseCost: 1400000, baseCPS: 1400},
+  { id: "Temple", baseCost: 20000000, baseCPS: 7800},
+  { id: "Wizard Tower", baseCost: 330000000, baseCPS: 44000}
+]
+
 export default function App() {
   const [cookies, setCookies] = useState(() => {
     const saved = localStorage.getItem("cookies");
@@ -31,7 +42,7 @@ export default function App() {
         </div>
       </div>
       <div className="section-bottom">
-        <Upgrades/>
+        <Upgrades upgradeList={SHOP} />
       </div>
     </div>
   );

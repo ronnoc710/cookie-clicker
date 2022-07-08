@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 export default function Upgrade(props) {
-
+  
   return(
     <button
       className="upgrade"
+      value={owned}
     >
       <span className="upgrade-name"> {props.id} </span>
       <span className="cookies-per-sec"> {props.baseCPS} cookies/second </span>

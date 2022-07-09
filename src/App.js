@@ -15,6 +15,8 @@ const upgrades = [
 ]
 
 export default function App() {
+  const [ owned, setOwned ] = useState(Array(8).fill(0))
+
   const [cookies, setCookies] = useState(() => {
     const saved = localStorage.getItem("cookies");
     const initialValue = JSON.parse(saved);
@@ -28,8 +30,6 @@ export default function App() {
   const handleClick = () => {
     setCookies(cookies + 1)
   }
-
-
 
   const shop = upgrades
   .map(upgrade => (
@@ -50,7 +50,7 @@ export default function App() {
         </div>
         <div className="cookie-container">
           <button className="big-cookie-btn" onClick={handleClick}>
-            <img src={bigCookie} className="big-cookie-img"/>
+            <img src={bigCookie} alt="big cookie" className="big-cookie-img"/>
           </button>
         </div>
       </div>

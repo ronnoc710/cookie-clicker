@@ -88,9 +88,15 @@
 
 .upgrade-cost {
   position: relative;
-  bottom: 2rem;
-  align-self: flex-end;
+  bottom: 3rem;
+  left: 8rem;
+  align-self: center;
   font-size: 30px;
   text-align: left;
   width: 33%;
+}
+
+.owned {
+  position: relative;
+  align-self: flex-end;
 }
